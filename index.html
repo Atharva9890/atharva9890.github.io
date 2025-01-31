@@ -9,9 +9,6 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
     <style>
         /* Light & Dark Mode Theme */
         :root {
@@ -19,6 +16,8 @@
             --text-color: #333;
             --card-bg: white;
             --shadow-color: rgba(0, 0, 0, 0.1);
+            --button-bg: #007bff;
+            --button-text: white;
         }
 
         .dark-mode {
@@ -26,6 +25,8 @@
             --text-color: #e0e0e0;
             --card-bg: #2c2c2c;
             --shadow-color: rgba(255, 255, 255, 0.1);
+            --button-bg: #333;
+            --button-text: #e0e0e0;
         }
 
         body {
@@ -38,13 +39,22 @@
             padding: 0;
         }
 
-        /* Night Mode Toggle */
-        .toggle-container {
+        /* Toggle Button */
+        .toggle-button {
             position: absolute;
             top: 15px;
             right: 20px;
+            padding: 10px 20px;
+            background: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 24px;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            background: #0056b3;
         }
 
         /* Sections */
@@ -103,10 +113,8 @@
 
 <body>
 
-    <!-- Night Mode Toggle -->
-    <div class="toggle-container">
-        <button class="fas fa-moon" id="theme-icon" onclick="toggleTheme()"></button>
-    </div>
+    <!-- Night Mode Toggle Button -->
+    <button class="toggle-button" onclick="toggleTheme()">Toggle Night Mode</button>
 
     <h1>Atharva Kalange</h1>
     <h2>GitHub Username: <strong>atharva9890</strong></h2>
@@ -115,7 +123,6 @@
     <section>
         <h3>🚀 Welcome to my portfolio!</h3>
         <p>This site showcases my projects, skills, and experience.</p>
-        <p>Also, check out my original Portfolio: <a href="https://kalangeatharva2610.web.app/"></a>Atharva_Kalange</p>
     </section>
 
     <section>
@@ -125,56 +132,31 @@
     </section>
 
     <section>
-        <h3>📂 Featured Projects(That I am working on & Completed)</h3>
+        <h3>📂 Featured Projects</h3>
         <div class="projects-container">
-
-            <!-- Machine Learning -->
             <div class="project-card">
-                <h4>🧠 NeuralNexus (ML)</h4>
-                <p>AI-powered **document summarizer** using NLP & Transformers.</p>
+                <h4>NeuralNexus (ML)</h4>
+                <p>AI-powered document summarizer using NLP & Transformers.</p>
+                <a href="https://github.com/atharva9890/neuralnexus">GitHub Link</a>
             </div>
-
             <div class="project-card">
-                <h4>🤖 VisionaryNet (ML)</h4>
-                <p>Image-based **emotion detection** with CNNs & OpenCV.</p>
+                <h4>CollabSphere (MERN)</h4>
+                <p>Real-time collaborative editor like Google Docs.</p>
+                <a href="https://github.com/atharva9890/collabsphere">GitHub Link</a>
             </div>
-
-            <!-- MERN Stack -->
             <div class="project-card">
-                <h4>🌍 CollabSphere (MERN)</h4>
-                <p>Real-time collaborative editor like **Google Docs**.</p>
-            </div>
-
-            <div class="project-card">
-                <h4>🎵 VibeVerse (MERN)</h4>
-                <p>Music recommendation system based on user preferences.</p>
-            </div>
-
-            <!-- Data Structures & Algorithms -->
-            <div class="project-card">
-                <h4>⚙️ AlgoSync (DSA)</h4>
-                <p>Algorithm **visualization tool** for sorting & graphs.</p>
-            </div>
-
-            <!-- Payment Gateways -->
-            <div class="project-card">
-                <h4>💳 FinTransact</h4>
-                <p>Integrated **Stripe & PayPal** payment gateway with fraud detection.</p>
-            </div>
-
-            <!-- Redis & Caching -->
-            <div class="project-card">
-                <h4>🚀 FlashCache (Custom Redis)</h4>
-                <p>High-speed in-memory cache like **Redis**, built from scratch.</p>
+                <h4>FlashCache (Custom Redis)</h4>
+                <p>High-speed in-memory cache like Redis, built from scratch.</p>
+                <a href="https://github.com/atharva9890/flashcache">GitHub Link</a>
             </div>
         </div>
     </section>
 
     <section>
         <h3>📞 Contact Me</h3>
-        <p>Email: <a href="mailto:atharva2610@csu.fullerton.edu">atharva2610@csu.fullerton.edu</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/atharva-kalange">LinkedIn</a></p>
-        <p>GitHub: <a href="https://github.com/Atharva9890">GitHub</a></p>
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/atharvakalange">Atharva's LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/atharva9890">Atharva's GitHub</a></p>
     </section>
 
     <footer>
@@ -184,12 +166,6 @@
     <script>
         function toggleTheme() {
             document.body.classList.toggle("dark-mode");
-            let icon = document.getElementById("theme-icon");
-            if (document.body.classList.contains("dark-mode")) {
-                icon.classList.replace("fa-moon", "fa-sun");
-            } else {
-                icon.classList.replace("fa-sun", "fa-moon");
-            }
         }
     </script>
 
