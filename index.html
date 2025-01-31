@@ -185,22 +185,11 @@
             transition: all 0.3s ease-in-out;
         }
 
-        .wiggly-underline {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .wiggly-underline::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 12px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 10'%3E%3Cpath d='M0 5 Q 10 0, 20 5 T 40 5 T 60 5 T 80 5 T 100 5 T 120 5 T 140 5 T 160 5 T 180 5 T 200 5' stroke='%23ff4500' stroke-width='3' fill='transparent'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-size: contain;
+        .wavy-underline {
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: #df9f1f;
+            text-decoration-thickness: 1.8px;
         }
     </style>
 </head>
@@ -310,7 +299,7 @@
             <img class="screenshot" src="assets/total.png" alt="GitHub Actions permission error">
         </a>
 
-        <p class="animated-text">💡💭 <span class="wiggly-underline">Honest Opinion on Jekyll – From a MERN Developer’s
+        <p class="animated-text">💭 <span class="wavy-underline">Honest Opinion on Jekyll – From a MERN Developer’s
                 POV</span><br>
             Ah yes, Jekyll, the static site generator that feels like it time-traveled from 2010 and refuses to leave.
             No real-time updates, no dynamic content, and let’s not even talk about its Liquid templates (which feel
