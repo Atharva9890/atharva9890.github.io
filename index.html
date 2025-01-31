@@ -52,11 +52,36 @@
         .screenshot {
             display: block;
             max-width: 100%;
-            height: auto;
+            height: 400px;
             margin: 20px auto;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
         }
+
+        .screenshot::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 150%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-30deg);
+            transition: left 0.7s ease-in-out;
+        }
+
+        .screenshot:hover {
+            transform: rotateY(5deg) scale(1.05);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .screenshot:hover::before {
+            left: 100%;
+        }
+
 
         .toggle-button:hover {
             background: #0056b3;
@@ -177,8 +202,15 @@
 
     <section>
         <h3>🔥 About Me</h3>
-        <p>I am a <strong>graduate student in Computer Science</strong> with experience in <strong>full-stack
-                development, cloud computing, and software architecture</strong>.</p>
+        <p>
+            I am a <strong>graduate student in Computer Science</strong> with experience in
+            <strong>full-stack development, cloud computing, and software architecture</strong>.
+            I enjoy working with modern web technologies and building scalable applications.
+        </p>
+        <p>
+            When I'm not coding, I love <strong>skydiving</strong> 🪂—because debugging a broken app isn’t the only way
+            I enjoy an adrenaline rush!
+        </p>
     </section>
 
     <section>
@@ -186,16 +218,16 @@
         <div class="projects-container">
             <div class="project-card">
                 <h4>🧠 NeuralNexus (ML)</h4>
-                <p>AI-powered **document summarizer** using NLP & Transformers.</p>
+                <p>AI-powered document summarizer using NLP & Transformers.</p>
             </div>
 
             <div class="project-card">
                 <h4>🤖 VisionaryNet (ML)</h4>
-                <p>Image-based **emotion detection** with CNNs & OpenCV.</p>
+                <p>Image-based emotion detection with CNNs & OpenCV.</p>
             </div>
             <div class="project-card">
                 <h4>🌍 CollabSphere (MERN)</h4>
-                <p>Real-time collaborative editor like **Google Docs**.</p>
+                <p>Real-time collaborative editor like Google Docs.</p>
             </div>
 
             <div class="project-card">
@@ -204,58 +236,57 @@
             </div>
             <div class="project-card">
                 <h4>⚙️ AlgoSync (DSA)</h4>
-                <p>Algorithm **visualization tool** for sorting & graphs.</p>
+                <p>Algorithm visualization tool for sorting & graphs.</p>
             </div>
 
             <div class="project-card">
                 <h4>💳 FinTransact</h4>
-                <p>Integrated **Stripe & PayPal** payment gateway with fraud detection.</p>
+                <p>Integrated Stripe & PayPal payment gateway with fraud detection.</p>
             </div>
 
             <div class="project-card">
                 <h4>🚀 FlashCache (Custom Redis)</h4>
-                <p>High-speed in-memory cache like **Redis**, built from scratch.</p>
-                <a href="https://github.com/atharva9890/flashcache">GitHub Link</a>
+                <p>High-speed in-memory cache like Redis, built from scratch.</p>
             </div>
         </div>
     </section>
 
     <section>
         <h3>📜 Deployment Process</h3>
-        <p class="deployment-step">✔ **Step 1:** Created a new GitHub repository and set up Jekyll.</p>
-        <p class="deployment-step">✔ **Step 2:** Installed Jekyll and Bundler on the local machine.</p>
-        <p class="deployment-step">✔ **Step 3:** Configured GitHub Pages to deploy from the `main` branch using GitHub
+        <p class="deployment-step">✔ Step 1: Created a new GitHub repository and set up Jekyll.</p>
+        <p class="deployment-step">✔ Step 2: Installed Jekyll and Bundler on the local machine.</p>
+        <p class="deployment-step">✔ Step 3: Configured GitHub Pages to deploy from the `main` branch using GitHub
             Actions.</p>
-        <p class="deployment-step">✔ **Step 4:** Wrote a custom workflow for **GitHub Actions** to automate build &
+        <p class="deployment-step">✔ Step 4: Wrote a custom workflow for GitHub Actions to automate build &
             deployment.</p>
-        <p class="deployment-step">✔ **Step 5:** Encountered permission issues with GitHub Actions (fixed with Personal
+        <p class="deployment-step">✔ Step 5: Encountered permission issues with GitHub Actions (fixed with Personal
             Access Token).</p>
-        <p class="deployment-step">✔ **Step 6:** Configured `_config.yml` and ignored `_site/` to allow automatic
+        <p class="deployment-step">✔ Step 6: Configured `_config.yml` and ignored `_site/` to allow automatic
             builds.</p>
-        <p class="deployment-step">✔ **Step 7:** Successfully deployed the portfolio with automated updates.</p>
+        <p class="deployment-step">✔ Step 7: Successfully deployed the portfolio with automated updates.</p>
 
         <h4>📸 Screenshots of Issues Faced & Fixes</h4>
-        <p class="deployment-step">💡 **Installation Error(Ruby Bundler couldn't install):**</p>
+        <p class="deployment-step">💡 Installation Error(Ruby Bundler couldn't install):</p>
         <a href="assets/RubyBundler.png" target="_blank">
             <img class="screenshot" src="assets/RubyBundler.png" alt="GitHub Actions permission error">
         </a>
 
-        <p class="deployment-step">💡 **Ruby version didn't fiund issue & fix:**</p>
+        <p class="deployment-step">💡 Ruby version didn't fiund issue & fix:</p>
         <a href="assets/RubyVersion.png" target="_blank">
             <img class="screenshot" src="assets/RubyVersion.png" alt="GitHub Actions permission error">
         </a>
 
-        <p class="deployment-step">💡 **GitHub Actions permission error:**</p>
+        <p class="deployment-step">💡 GitHub Actions permission error:</p>
         <a href="assets/PAT.png" target="_blank">
             <img class="screenshot" src="assets/PAT.png" alt="GitHub Actions permission error">
         </a>
 
-        <p class="deployment-step">💡 **GitHub Pages build bug & fix:**</p>
+        <p class="deployment-step">💡 GitHub Pages build bug & fix:</p>
         <a href="assets/Branch.png" target="_blank">
             <img class="screenshot" src="assets/Branch.png" alt="GitHub Actions permission error">
         </a>
 
-        <p class="deployment-step">💡 **Overall Deployements for final Page:**</p>
+        <p class="deployment-step">💡 Overall Deployements for final Page:</p>
         <a href="assets/total.png" target="_blank">
             <img class="screenshot" src="assets/Branch.png" alt="GitHub Actions permission error">
         </a>
@@ -279,10 +310,11 @@
 
     <section>
         <h3>📞 Contact Me</h3>
-        <p>Email: <a style='text-decoration: none;'
+        <p>Email: <a style="text-decoration: none;color: #b0a1a1;"
                 href="mailto:atharva2610@csu.fullerton.edu">atharva2610@csu.fullerton.edu</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/atharva-kalange">LinkedIn</a></p>
-        <p>GitHub: <a href="https://github.com/Atharva9890">GitHub</a></p>
+        <p>LinkedIn: <a style="text-decoration: none;color: #b0a1a1;"
+                href="https://linkedin.com/in/atharva-kalange">LinkedIn</a></p>
+        <p>GitHub: <a style="text-decoration: none;color: #b0a1a1;" href="https://github.com/Atharva9890">GitHub</a></p>
     </section>
 
     <footer>
