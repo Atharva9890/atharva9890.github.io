@@ -16,10 +16,10 @@ I am a **graduate student in Computer Science** with experience in **full-stack 
 My key interests include **distributed systems, data structures, and algorithms**. I enjoy working on **open-source projects** and contributing to the **developer community**.
 
 ## 📂 Featured Projects
-- **Project 1:** [GitHub Link](https://github.com/atharvakalange/project1)
-- **Project 2:** [GitHub Link](https://github.com/atharvakalange/project2)
+- **Project 1:** ML
+- **Project 2:** MERN
 
 ## 📞 Contact Me
 📧 Email: atharvakalange@example.com  
-💼 LinkedIn: [Atharva's LinkedIn](https://linkedin.com/in/atharvakalange)  
-📁 GitHub: [Atharva's GitHub](https://github.com/atharvakalange)
+💼 LinkedIn: [Atharva's LinkedIn](https://www.linkedin.com/in/atharva-kalange)  
+📁 GitHub: [Atharva's GitHub](https://github.com/Atharva9890)
