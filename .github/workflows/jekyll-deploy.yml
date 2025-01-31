@@ -3,7 +3,7 @@ name: Deploy Jekyll Portfolio
 on:
   push:
     branches:
-      - main
+      - main  #
 
 jobs:
   build-deploy:
@@ -25,10 +25,11 @@ jobs:
         run: bundle install
 
       - name: Build Jekyll Site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build  
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 🔄 Updated to use PAT
-          publish_dir: ./_site
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  
+          publish_branch: gh-pages 
+          publish_dir: ./_site 
