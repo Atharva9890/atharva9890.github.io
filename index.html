@@ -13,71 +13,82 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <style>
-        /* General Styling */
+        /* Light & Dark Mode Theme */
+        :root {
+            --bg-color: #f5f7fa;
+            --text-color: #333;
+            --card-bg: white;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            --bg-color: #1e1e1e;
+            --text-color: #e0e0e0;
+            --card-bg: #2c2c2c;
+            --shadow-color: rgba(255, 255, 255, 0.1);
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            background: #f5f7fa;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
             margin: 0;
             padding: 0;
-            color: #333;
         }
 
-        /* Header Styling */
-        h1 {
-            font-size: 2.5em;
-            font-weight: 600;
-            margin: 20px 0;
+        /* Night Mode Toggle */
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
         }
 
-        h2 {
-            font-size: 1.8em;
-            font-weight: 400;
-            color: #555;
-        }
-
-        /* Section Styling */
+        /* Sections */
         section {
             width: 80%;
             margin: 30px auto;
             padding: 20px;
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
-        /* Featured Projects */
-        .projects {
+        /* Project Cards */
+        .projects-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
-            margin-top: 15px;
+            gap: 20px;
         }
 
-        .project {
-            background: #fff;
-            padding: 15px;
+        .project-card {
+            width: 300px;
+            background: var(--card-bg);
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 45%;
+            box-shadow: 0 4px 8px var(--shadow-color);
             transition: transform 0.3s ease-in-out;
+            text-align: left;
         }
 
-        .project:hover {
+        .project-card:hover {
             transform: translateY(-5px);
         }
 
-        .project a {
+        .project-card h4 {
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .project-card a {
             text-decoration: none;
             color: #007bff;
             font-weight: 600;
-        }
-
-        /* Contact */
-        .contact a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: 500;
         }
 
         /* Footer */
@@ -92,6 +103,11 @@
 
 <body>
 
+    <!-- Night Mode Toggle -->
+    <div class="toggle-container">
+        <i class="fas fa-moon" id="theme-icon" onclick="toggleTheme()"></i>
+    </div>
+
     <h1>Atharva Kalange</h1>
     <h2>GitHub Username: <strong>atharva9890</strong></h2>
     <h2>CPSC 549-70</h2>
@@ -99,7 +115,7 @@
     <section>
         <h3>🚀 Welcome to my portfolio!</h3>
         <p>This site showcases my projects, skills, and experience.</p>
-        <p>This is my original Portfolio: <a href="https://kalangeatharva2610.web.app/">Atharva</a></p>
+        <p>Also, check out my original Portfolio: <a href="https://kalangeatharva2610.web.app/"></a>Atharva_Kalange</p>
     </section>
 
     <section>
@@ -109,29 +125,73 @@
     </section>
 
     <section>
-        <h3>📂 Featured Projects</h3>
-        <div class="projects">
-            <div class="project">
-                <h4>🤖 ML Project</h4>
-                <a href="https://github.com/atharva9890/project1">GitHub Link</a>
+        <h3>📂 Featured Projects(That I a working on & Completed)</h3>
+        <div class="projects-container">
+
+            <!-- Machine Learning -->
+            <div class="project-card">
+                <h4>🧠 NeuralNexus (ML)</h4>
+                <p>AI-powered **document summarizer** using NLP & Transformers.</p>
             </div>
-            <div class="project">
-                <h4>🌍 MERN Stack Project</h4>
-                <a href="https://github.com/atharva9890/project2">GitHub Link</a>
+
+            <div class="project-card">
+                <h4>🤖 VisionaryNet (ML)</h4>
+                <p>Image-based **emotion detection** with CNNs & OpenCV.</p>
+            </div>
+
+            <!-- MERN Stack -->
+            <div class="project-card">
+                <h4>🌍 CollabSphere (MERN)</h4>
+                <p>Real-time collaborative editor like **Google Docs**.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>🎵 VibeVerse (MERN)</h4>
+                <p>Music recommendation system based on user preferences.</p>
+            </div>
+
+            <!-- Data Structures & Algorithms -->
+            <div class="project-card">
+                <h4>⚙️ AlgoSync (DSA)</h4>
+                <p>Algorithm **visualization tool** for sorting & graphs.</p>
+            </div>
+
+            <!-- Payment Gateways -->
+            <div class="project-card">
+                <h4>💳 FinTransact</h4>
+                <p>Integrated **Stripe & PayPal** payment gateway with fraud detection.</p>
+            </div>
+
+            <!-- Redis & Caching -->
+            <div class="project-card">
+                <h4>🚀 FlashCache (Custom Redis)</h4>
+                <p>High-speed in-memory cache like **Redis**, built from scratch.</p>
             </div>
         </div>
     </section>
 
     <section>
         <h3>📞 Contact Me</h3>
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/atharvakalange">Atharva's LinkedIn</a></p>
-        <p>GitHub: <a href="https://github.com/atharva9890">Atharva's GitHub</a></p>
+        <p>Email: <a href="mailto:atharva2610@csu.fullerton.edu">atharva2610@csu.fullerton.edu</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/atharva-kalange">LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/Atharva9890">GitHub</a></p>
     </section>
 
     <footer>
         <p>© 2025 Atharva Kalange | Built with ❤️ & Jekyll</p>
     </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+            let icon = document.getElementById("theme-icon");
+            if (document.body.classList.contains("dark-mode")) {
+                icon.classList.replace("fa-moon", "fa-sun");
+            } else {
+                icon.classList.replace("fa-sun", "fa-moon");
+            }
+        }
+    </script>
 
 </body>
 
