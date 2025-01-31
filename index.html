@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atharva Kalange - Portfolio</title>
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Light & Dark Mode Theme */
         :root {
             --bg-color: #1e1e1e;
             --text-color: #e0e0e0;
@@ -39,7 +36,6 @@
             padding: 0;
         }
 
-        /* Toggle Button */
         .toggle-button {
             position: absolute;
             top: 15px;
@@ -53,11 +49,19 @@
             transition: background 0.3s ease;
         }
 
+        .screenshot {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
         .toggle-button:hover {
             background: #0056b3;
         }
 
-        /* Sections */
         section {
             width: 80%;
             margin: 30px auto;
@@ -68,7 +72,6 @@
             transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
-        /* Project Cards */
         .projects-container {
             display: flex;
             flex-wrap: wrap;
@@ -101,22 +104,70 @@
             font-weight: 600;
         }
 
-        /* Footer */
         footer {
             margin-top: 30px;
             padding: 10px;
             background: #007bff;
             color: white;
         }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff4d4d, 0 0 15px #ff4d4d;
+            }
+
+            50% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+            }
+
+            100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff4d4d, 0 0 15px #ff4d4d;
+            }
+        }
+
+        .animated-name {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            animation: glow 1.5s infinite alternate;
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        @keyframes gradient-text {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-text {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(45deg, #ff4d4d, #ff9900, #ff4d4d, #ff0099, #ff4d4d);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 3s infinite alternate ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Night Mode Toggle Button -->
-    <button class="toggle-button" onclick="toggleTheme()">Toggle Night Mode</button>
+    <button class="toggle-button" onclick="toggleTheme()">Toggle Light Mode</button>
 
-    <h1>Atharva Kalange</h1>
+    <h1 class="animated-name">Atharva Kalange</h1>
     <h2>GitHub Username: <strong>atharva9890</strong></h2>
     <h2>CPSC 549-70</h2>
 
@@ -134,8 +185,6 @@
     <section>
         <h3>📂 Featured Projects(I am working on & Completed)</h3>
         <div class="projects-container">
-
-            <!-- Machine Learning -->
             <div class="project-card">
                 <h4>🧠 NeuralNexus (ML)</h4>
                 <p>AI-powered **document summarizer** using NLP & Transformers.</p>
@@ -145,8 +194,6 @@
                 <h4>🤖 VisionaryNet (ML)</h4>
                 <p>Image-based **emotion detection** with CNNs & OpenCV.</p>
             </div>
-
-            <!-- MERN Stack -->
             <div class="project-card">
                 <h4>🌍 CollabSphere (MERN)</h4>
                 <p>Real-time collaborative editor like **Google Docs**.</p>
@@ -156,20 +203,16 @@
                 <h4>🎵 VibeVerse (MERN)</h4>
                 <p>Music recommendation system based on user preferences.</p>
             </div>
-
-            <!-- Data Structures & Algorithms -->
             <div class="project-card">
                 <h4>⚙️ AlgoSync (DSA)</h4>
                 <p>Algorithm **visualization tool** for sorting & graphs.</p>
             </div>
 
-            <!-- Payment Gateways -->
             <div class="project-card">
                 <h4>💳 FinTransact</h4>
                 <p>Integrated **Stripe & PayPal** payment gateway with fraud detection.</p>
             </div>
 
-            <!-- Redis & Caching -->
             <div class="project-card">
                 <h4>🚀 FlashCache (Custom Redis)</h4>
                 <p>High-speed in-memory cache like **Redis**, built from scratch.</p>
@@ -194,21 +237,31 @@
 
         <h4>📸 Screenshots of Issues Faced & Fixes</h4>
         <p class="deployment-step">💡 **Installation Error(Ruby Bundler couldn't install):**</p>
-        <img class="screenshot" src="./assets/RubyBundler.png" alt="GitHub Actions permission error">
+        <a href="assets/RubyBundler.png" target="_blank">
+            <img class="screenshot" src="assets/RubyBundler.png" alt="GitHub Actions permission error">
+        </a>
 
         <p class="deployment-step">💡 **Ruby version didn't fiund issue & fix:**</p>
-        <img class="screenshot" src="./assets/RubyVersion.png" alt="GitHub Actions permission error">
+        <a href="assets/RubyVersion.png" target="_blank">
+            <img class="screenshot" src="assets/RubyVersion.png" alt="GitHub Actions permission error">
+        </a>
 
         <p class="deployment-step">💡 **GitHub Actions permission error:**</p>
-        <img class="screenshot" src="./assets/PAT.png" alt="GitHub Actions permission error">
+        <a href="assets/PAT.png" target="_blank">
+            <img class="screenshot" src="assets/PAT.png" alt="GitHub Actions permission error">
+        </a>
 
         <p class="deployment-step">💡 **GitHub Pages build bug & fix:**</p>
-        <img class="screenshot" src="./assets/Branch.png" alt="GitHub Actions permission error">
+        <a href="assets/Branch.png" target="_blank">
+            <img class="screenshot" src="assets/Branch.png" alt="GitHub Actions permission error">
+        </a>
 
         <p class="deployment-step">💡 **Overall Deployements for final Page:**</p>
-        <img class="screenshot" src="./assets/total.png" alt="GitHub Actions permission error">
+        <a href="assets/total.png" target="_blank">
+            <img class="screenshot" src="assets/Branch.png" alt="GitHub Actions permission error">
+        </a>
 
-        <p class="deployment-step">💡💭 Honest Opinion on Jekyll – From a MERN Developer’s POV
+        <p class="deployment-step animated-text">💡💭 Honest Opinion on Jekyll – From a MERN Developer’s POV
             Ah yes, Jekyll, the static site generator that feels like it time-traveled from 2010 and refuses to leave.
             No real-time updates, no dynamic content, and let’s not even talk about its Liquid templates (which feel
             like a relic from the Stone Age).
