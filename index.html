@@ -5,38 +5,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atharva Kalange - Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 400;
+            color: #555;
+        }
+
+        /* Section Styling */
+        section {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Featured Projects */
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 15px;
+        }
+
+        .project {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        /* Contact */
+        .contact a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background: #007bff;
+            color: white;
         }
     </style>
 </head>
 
 <body>
+
     <h1>Atharva Kalange</h1>
-    <h2>GitHub Username: atharva9890</h2>
+    <h2>GitHub Username: <strong>atharva9890</strong></h2>
     <h2>CPSC 549-70</h2>
 
-    <p>🚀 Welcome to my portfolio! This site showcases my projects, skills, and experience.</p>
+    <section>
+        <h3>🚀 Welcome to my portfolio!</h3>
+        <p>This site showcases my projects, skills, and experience.</p>
+        <p>This is my original Portfolio: <a href="https://kalangeatharva2610.web.app/">Atharva</a></p>
+    </section>
 
-    <h3>🔥 About Me</h3>
-    <p>I am a <strong>graduate student in Computer Science</strong> with experience in <strong>full-stack development,
-            cloud computing, and software architecture</strong>.</p>
+    <section>
+        <h3>🔥 About Me</h3>
+        <p>I am a <strong>graduate student in Computer Science</strong> with experience in <strong>full-stack
+                development, cloud computing, and software architecture</strong>.</p>
+    </section>
 
-    <h3>📂 Featured Projects</h3>
-    <ul>
-        <li><strong>ML:</strong> <a href="https://github.com/atharva9890/project1">GitHub Link</a></li>
-        <li><strong>MERN:</strong> <a href="https://github.com/atharva9890/project2">GitHub Link</a></li>
-    </ul>
+    <section>
+        <h3>📂 Featured Projects</h3>
+        <div class="projects">
+            <div class="project">
+                <h4>🤖 ML Project</h4>
+                <a href="https://github.com/atharva9890/project1">GitHub Link</a>
+            </div>
+            <div class="project">
+                <h4>🌍 MERN Stack Project</h4>
+                <a href="https://github.com/atharva9890/project2">GitHub Link</a>
+            </div>
+        </div>
+    </section>
 
-    <h3>📞 Contact Me</h3>
-    <p>Email: your-email@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/atharva-kalange">Atharva's LinkedIn</a></p>
-    <p>GitHub: <a href="https://github.com/Atharva9890">Atharva's GitHub</a></p>
+    <section>
+        <h3>📞 Contact Me</h3>
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/atharvakalange">Atharva's LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/atharva9890">Atharva's GitHub</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Atharva Kalange | Built with ❤️ & Jekyll</p>
+    </footer>
+
 </body>
 
 </html>
